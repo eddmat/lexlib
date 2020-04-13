@@ -1,0 +1,51 @@
+[19:16:13.829] Global cache location '/home/vicky/.cache/typescript/3.8', safe file path '/home/vicky/.config/yarn/global/node_modules/typescript/lib/typingSafeList.json', types map path /home/vicky/.config/yarn/global/node_modules/typescript/lib/typesMap.json
+[19:16:13.831] Processing cache location '/home/vicky/.cache/typescript/3.8'
+[19:16:13.832] Trying to find '/home/vicky/.cache/typescript/3.8/package.json'...
+[19:16:13.844] Loaded content of '/home/vicky/.cache/typescript/3.8/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.485"}}
+[19:16:13.844] Loaded content of '/home/vicky/.cache/typescript/3.8/package-lock.json'
+[19:16:13.844] Finished processing cache location '/home/vicky/.cache/typescript/3.8'
+[19:16:13.845] Process id: 14583
+[19:16:13.845] NPM location: /usr/local/bin/npm (explicit '--npmLocation' not  provided)
+[19:16:13.845] validateDefaultNpmLocation: false
+[19:16:13.846] Npm config file: /home/vicky/.cache/typescript/3.8/package.json
+[19:16:13.846] Updating types-registry npm package...
+[19:16:13.846] Exec: /usr/local/bin/npm install --ignore-scripts types-registry@latest
+[19:16:21.660]     Succeeded. stdout:
+    + types-registry@0.1.485
+    updated 1 package and audited 1 package in 2.892s
+found 0 vulnerabilities
+
+
+[19:16:21.661] Updated types-registry npm package
+[19:28:1.582] Got install request {"projectName":"/dev/null/inferredProject2*","fileNames":[],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/vicky/Code/lexico-next/blog/pages","kind":"discover"}
+[19:28:1.670] Loaded safelist from types map file '/home/vicky/.config/yarn/global/node_modules/typescript/lib/typesMap.json'
+[19:28:1.671] Explicitly included types: []
+[19:28:1.674] Inferred typings from unresolved imports: []
+[19:28:1.675] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/vicky/Code/lexico-next/blog/pages/bower_components","/home/vicky/Code/lexico-next/blog/pages/node_modules"]}
+[19:28:1.675] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/vicky/Code/lexico-next/blog/pages/bower_components","/home/vicky/Code/lexico-next/blog/pages/node_modules"]}
+[19:28:1.676] DirectoryWatcher:: Added:: WatchInfo: /home/vicky/Code/lexico-next/blog/pages/bower_components
+[19:28:1.697] DirectoryWatcher:: Added:: WatchInfo: /home/vicky/Code/lexico-next/blog/pages/node_modules
+[19:28:1.705] Sending response:
+    {"projectName":"/dev/null/inferredProject2*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[19:28:1.706] Response has been sent.
+[19:28:1.706] No new typings were requested as a result of typings discovery
+[19:58:18.817] Got install request {"projectName":"/dev/null/inferredProject3*","fileNames":[],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/vicky/Code/lexico-next/blog/components","kind":"discover"}
+[19:58:18.848] Explicitly included types: []
+[19:58:18.868] Inferred typings from unresolved imports: []
+[19:58:18.869] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/vicky/Code/lexico-next/blog/components/bower_components","/home/vicky/Code/lexico-next/blog/components/node_modules"]}
+[19:58:18.869] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/vicky/Code/lexico-next/blog/components/bower_components","/home/vicky/Code/lexico-next/blog/components/node_modules"]}
+[19:58:18.873] DirectoryWatcher:: Added:: WatchInfo: /home/vicky/Code/lexico-next/blog/components/bower_components
+[19:58:18.889] DirectoryWatcher:: Added:: WatchInfo: /home/vicky/Code/lexico-next/blog/components/node_modules
+[19:58:18.894] Sending response:
+    {"projectName":"/dev/null/inferredProject3*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[19:58:18.899] Response has been sent.
+[19:58:18.900] No new typings were requested as a result of typings discovery
+[20:8:18.981] Got install request {"projectName":"/dev/null/inferredProject3*","fileNames":[],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/vicky/Code/lexico-next/blog/components","kind":"discover"}
+[20:8:18.982] Explicitly included types: []
+[20:8:18.983] Inferred typings from unresolved imports: []
+[20:8:18.983] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/vicky/Code/lexico-next/blog/components/bower_components","/home/vicky/Code/lexico-next/blog/components/node_modules"]}
+[20:8:18.983] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/vicky/Code/lexico-next/blog/components/bower_components","/home/vicky/Code/lexico-next/blog/components/node_modules"]}
+[20:8:18.994] Sending response:
+    {"projectName":"/dev/null/inferredProject3*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[20:8:18.995] Response has been sent.
+[20:8:18.995] No new typings were requested as a result of typings discovery

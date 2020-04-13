@@ -1,0 +1,182 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@tailwind screens;
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+@font-face {
+  font-family: "Copyleft";
+  src: url("/fonts/cc-icons.woff") format("woff");
+}
+
+$bg-section: #eaeaea;
+
+body {
+  background-color: $bg-section;
+  font-family: 'Noto Serif JP', serif;
+
+  .main-header {
+    @apply mx-auto .h-screen pt-5 bg-cover bg-center -mt-8;
+
+    background-image: url("/bolten.jpeg");
+
+    h1,
+    h2 {
+      @apply text-right mr-8 text-yellow-100;
+
+      font-family: 'Anton', sans-serif;
+    }
+
+    h1 {
+      @apply text-4xl uppercase;
+
+      @screen md {
+        @apply mt-20 bg-black table mt-64 px-10 float-right;
+        font-size: 7rem;
+      }
+    }
+
+    h2 {
+      @apply text-sm;
+      font-family: 'Fira Code', monospace;
+
+      @screen md {
+        @apply text-2xl tracking-wider mt-10 bg-black table px-8 float-right;
+      }
+    }
+
+  }
+
+  .navigation-container {
+    @apply sticky top-0 shadow-lg z-10;
+
+    .navigation {
+      @apply text-sm bg-black px-6;
+
+      font-family: 'Fira Code', monospace;
+
+      &[data-scrolled="true"] {
+        @apply hidden;
+      }
+
+      @screen md {
+        @apply text-lg;
+      }
+
+      ul {
+        @apply flex flex-row content-center;
+
+        li {
+          button {
+            @apply p-2 text-gray-300 font-bold ml-4;
+
+            &:hover {
+              @apply bg-red-600 rounded shadow-md;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    @apply py-5 px-8 text-justify shadow-md border-b border-black border-dashed;
+
+    @screen md {
+      @apply px-20;
+    }
+
+    background-color: $bg-section;
+
+    h2 {
+      @apply text-3xl font-black text-left mb-2;
+
+      @screen md {
+        @apply text-5xl;
+      }
+    }
+  }
+
+  .articles-container {
+    article {
+      @screen md {
+        column-count: 2;
+        column-gap: 2rem;
+      }
+
+      &.component {
+        @apply py-5 max-h-screen overflow-hidden relative;
+
+        &:last-child {
+          @apply border-0;
+        }
+      }
+
+      h2 {
+        @apply leading-tight;
+      }
+
+      p {
+        hyphens: auto;
+        text-indent: 2rem;
+
+      }
+
+      .info {
+        @apply flex bg-gray-900 text-white border-double border-8 border-white mb-10 p-5;
+
+        .cc {
+          @apply text-lg tracking-widest align-middle;
+          font-family: 'Copyleft', serif;
+        }
+
+        li {
+          @apply mb-3 leading-tight;
+        }
+      }
+
+      .info {
+        @apply flex bg-gray-900 text-white border-double border-8 border-white mb-10 p-5;
+
+        .cc {
+          @apply text-lg tracking-widest align-middle;
+          font-family: 'Copyleft', serif;
+        }
+
+        li {
+          @apply mb-3 leading-tight;
+        }
+      }
+
+      .fade-effect {
+        @apply w-full h-20 absolute bottom-0;
+        background: linear-gradient(transparent, $bg-section);
+      }
+    }
+  }
+
+  .archive-container {
+    ul {
+      li {
+        @apply mt-2;
+        h3 {
+          span {
+            @apply font-mono text-xs bg-gray-300 px-1 rounded border border-gray-400;
+          }
+        }
+      }
+    }
+  }
+
+  .about-container {
+    @apply bg-gray-900 text-gray-200 whitespace-pre-wrap;
+  }
+}

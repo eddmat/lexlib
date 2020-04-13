@@ -8,8 +8,32 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.4",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-http": "^1.5.17",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.0.0",
+    "graphql-tag": "^2.10.3",
+    "isomorphic-unfetch": "^3.0.0",
+    "moment": "^2.24.0",
     "next": "9.3.4",
+    "next-fonts": "^1.0.3",
+    "next-seo": "^4.4.0",
+    "next-with-apollo": "^5.0.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-markdown": "^4.3.1",
+    "react-moment": "^0.9.7",
+    "react-touch-events": "^2.1.0",
+    "sass": "^1.26.3"
+  },
+  "devDependencies": {
+    "@types/next-seo": "^1.10.0",
+    "@types/node": "^13.11.1",
+    "@types/react": "^16.9.34",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.2.0",
+    "typescript": "^3.8.3"
   }
 }

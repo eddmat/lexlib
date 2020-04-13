@@ -1,0 +1,19 @@
+[23:56:53.820] Global cache location '/home/vicky/.cache/typescript/3.8', safe file path '/home/vicky/.config/yarn/global/node_modules/typescript/lib/typingSafeList.json', types map path /home/vicky/.config/yarn/global/node_modules/typescript/lib/typesMap.json
+[23:56:53.824] Processing cache location '/home/vicky/.cache/typescript/3.8'
+[23:56:53.825] Trying to find '/home/vicky/.cache/typescript/3.8/package.json'...
+[23:56:53.830] Loaded content of '/home/vicky/.cache/typescript/3.8/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.485"}}
+[23:56:53.830] Loaded content of '/home/vicky/.cache/typescript/3.8/package-lock.json'
+[23:56:53.830] Finished processing cache location '/home/vicky/.cache/typescript/3.8'
+[23:56:53.831] Process id: 4413
+[23:56:53.832] NPM location: /usr/local/bin/npm (explicit '--npmLocation' not  provided)
+[23:56:53.832] validateDefaultNpmLocation: false
+[23:56:53.832] Npm config file: /home/vicky/.cache/typescript/3.8/package.json
+[23:56:53.833] Updating types-registry npm package...
+[23:56:53.833] Exec: /usr/local/bin/npm install --ignore-scripts types-registry@latest
+[23:56:59.929]     Succeeded. stdout:
+    + types-registry@0.1.485
+    updated 1 package and audited 1 package in 2.506s
+found 0 vulnerabilities
+
+
+[23:56:59.930] Updated types-registry npm package
