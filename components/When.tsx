@@ -1,8 +1,13 @@
 import React from 'react'
 import { DateTime } from 'luxon'
 
-const When = ({ dateTime }) => {
-  const today = DateTime.local()
+type DateProp = {
+  dateTime: string
+}
+
+const When = ({ dateTime }: DateProp) => {
+  const local = DateTime.local().toFormat('yyyy-MM-dd')
+  const today = DateTime.fromISO(local)
   const createdAt = DateTime.fromISO(dateTime)
   const diff = today.diff(createdAt, 'days').toObject()
 

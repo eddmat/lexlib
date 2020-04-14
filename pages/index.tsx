@@ -1,10 +1,12 @@
 import Hero from '../components/Hero'
-import Articles from '../components/Articles'
+import Posts from '../components/Posts'
+import About from '../components/About'
 
 const Home = () => (
   <main className="container">
     <Hero />
-    <Articles />
+    <Posts />
+    <About />
   </main>
 )
 
