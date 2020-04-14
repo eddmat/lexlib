@@ -5,7 +5,7 @@ import { createHttpLink } from 'apollo-link-http'
 import fetch from 'isomorphic-unfetch'
 
 const GRAPHQL_URL = 'https://graphql.datocms.com'
-const API_TOKEN = process.env.NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN
+const API_TOKEN = process.env.DATOCMS_API_TOKEN
 
 const link = createHttpLink({
   fetch,
