@@ -24,35 +24,44 @@ body {
   font-family: 'Noto Serif JP', serif;
 
   .main-header {
-    @apply mx-auto .h-screen pt-5 bg-cover bg-center -mt-8;
+    @apply flex flex-row-reverse mx-auto .h-screen bg-no-repeat bg-left pt-5;
 
-    background-image: url("/bolten.jpeg");
+    background-image: url("/bolten-hero.jpeg");
 
-    h1,
-    h2 {
-      @apply text-right mr-8 text-yellow-100;
+    article {
+      @apply w-3/4 mt-5 shadow-md rounded p-5 pt-1;
 
-      font-family: 'Anton', sans-serif;
-    }
-
-    h1 {
-      @apply text-4xl uppercase;
+      background-color: lighten($bg-section, 5%);
+      height: fit-content;
 
       @screen md {
-        @apply mt-20 bg-black table mt-64 px-10 float-right;
-        font-size: 7rem;
+        @apply mt-20 w-1/2;
+      }
+
+      h1 {
+        @apply text-4xl mb-10 text-left leading-tight font-black;
+
+        @screen md {
+          @apply text-6xl;
+        }
+      }
+
+      p {
+        @apply text-left text-xl;
+
+        @screen md {
+          @apply text-2xl;
+        }
+      }
+
+      .published-when {
+        @apply text-right text-sm font-mono uppercase;
+
+        span {
+          @apply bg-yellow-200 rounded p-2;
+        }
       }
     }
-
-    h2 {
-      @apply text-sm;
-      font-family: 'Fira Code', monospace;
-
-      @screen md {
-        @apply text-2xl tracking-wider mt-10 bg-black table px-8 float-right;
-      }
-    }
-
   }
 
   .navigation-container {
@@ -62,10 +71,6 @@ body {
       @apply text-sm bg-black px-6;
 
       font-family: 'Fira Code', monospace;
-
-      &[data-scrolled="true"] {
-        @apply hidden;
-      }
 
       @screen md {
         @apply text-lg;
@@ -88,7 +93,7 @@ body {
   }
 
   section {
-    @apply py-5 px-8 text-justify shadow-md border-b border-black border-dashed;
+    @apply py-5 px-8 text-justify shadow-md border-b-2 border-black border-dashed;
 
     @screen md {
       @apply px-20;
@@ -105,19 +110,17 @@ body {
     }
   }
 
+  .posts-container {
+    article {
+      @apply mb-5;
+    }
+  }
+
   .articles-container {
     article {
       @screen md {
         column-count: 2;
         column-gap: 2rem;
-      }
-
-      &.component {
-        @apply py-5 max-h-screen overflow-hidden relative;
-
-        &:last-child {
-          @apply border-0;
-        }
       }
 
       h2 {
@@ -126,8 +129,6 @@ body {
 
       p {
         hyphens: auto;
-        text-indent: 2rem;
-
       }
 
       .info {
@@ -141,24 +142,6 @@ body {
         li {
           @apply mb-3 leading-tight;
         }
-      }
-
-      .info {
-        @apply flex bg-gray-900 text-white border-double border-8 border-white mb-10 p-5;
-
-        .cc {
-          @apply text-lg tracking-widest align-middle;
-          font-family: 'Copyleft', serif;
-        }
-
-        li {
-          @apply mb-3 leading-tight;
-        }
-      }
-
-      .fade-effect {
-        @apply w-full h-20 absolute bottom-0;
-        background: linear-gradient(transparent, $bg-section);
       }
     }
   }
