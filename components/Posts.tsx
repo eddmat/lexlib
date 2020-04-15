@@ -4,38 +4,40 @@ import Query from '../components/Query'
 import When from '../components/When'
 import ReactTouchEvents from 'react-touch-events'
 
-const handleSwipe = (direction: string) => {
-  console.log('swiped', direction)
-}
-
 const handleTap = () => {
   console.log('tapped')
 }
 
 const Posts = () => {
-  const [scrolled, setScrolled] = useState(false)
+  const [swipe, setSwipe] = useState('')
+  const [current, setCurrent] = useState(0)
+  const [postsCount, setPostsCount] = useState(0)
+
+  const handleSwipe = (direction: string) => {
+    setSwipe(direction)
+
+    if (current < postsCount) {
+      console.log(current, postsCount)
+      if (direction === 'left') setCurrent(current + 1)
+
+      if (direction === 'right') setCurrent(current - 1)
+    }
+  }
 
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 660
+    const articlesElm = document.getElementsByClassName('post')
+    const postsCount = articlesElm.length - 1
 
-      if (isScrolled !== scrolled) {
-        setScrolled(!scrolled)
-      }
-    }
-
-    return () => {
-      document.removeEventListener('scroll', handleScroll)
-    }
-  }, [scrolled])
+    setPostsCount(postsCount)
+  }, [swipe])
 
   return (
     <Query query={POSTS_QUERY}>
       {({ data: { allPosts } }) => (
         <section className="posts-container">
-          {allPosts.map((post: any) => (
+          {allPosts.map((post: any, index: number) => (
             <ReactTouchEvents key={post.id} onTap={handleTap} onSwipe={handleSwipe}>
-              <article>
+              <article className="post" data-current={index === current} data-direction={swipe}>
                 <div className="published-when">
                   <When dateTime={post.date} />
                 </div>
