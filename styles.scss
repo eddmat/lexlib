@@ -112,76 +112,74 @@ body {
   }
 
   section {
-    @apply py-5 text-justify shadow-md border-b border-black border-dashed;
-
-    @screen md {
-      @apply px-20;
-    }
-
-    background-color: $bg-section;
+    @apply shadow-md;
   }
 
   .posts-container {
-    @apply flex flex-row overflow-hidden px-2;
-
     background-color: $bg-white;
+    background-image: url("/flag.svg") no-repeat;
+    background-position: 95% 45%;
 
-    @screen md {
-      @apply pt-24 bg-no-repeat;
-
-      background-image: url("/flag.svg");
-      background-position: 95% 45%;
-      flex-wrap: wrap;
-    }
-
-    h2 {
-      @apply text-3xl text-left leading-tight mb-2;
-
-      font-family: "Prata", serif;
+    .post-card-container {
+      @apply flex flex-row overflow-hidden px-2;
 
       @screen md {
-        @apply text-5xl;
-      }
-    }
+        @apply pt-24;
 
-    .post-card {
-      @apply mb-5 shadow-md;
-      @apply px-10 pb-10 pt-1 text-black rounded;
-
-      background-color: lighten($bg-section, 5%);
-      flex: 0 0 100vw;
-
-      &[data-direction="left"] {
-        @apply hidden;
+        flex-wrap: wrap;
       }
 
-      &[data-current="true"] {
-        @apply block;
-      }
+      h2 {
+        @apply text-3xl text-left leading-tight mb-2;
 
-      &[data-direction="left"] {
-        &[data-current="true"] + article {
-          @apply block;
+        font-family: "Prata", serif;
+
+        @screen md {
+          @apply text-5xl;
         }
       }
 
-      @screen md {
-        @apply w-1/2 px-5 pb-5 pt-1 mx-2;
+      .post-card {
+        @apply mb-5 shadow-md;
+        @apply px-10 pb-10 pt-1 text-black rounded;
 
-        flex: 0 0 32%;
+        background-color: lighten($bg-section, 5%);
+        flex: 0 0 100vw;
+
+        &[data-direction="left"] {
+          @apply hidden;
+        }
+
+        &[data-current="true"] {
+          @apply block;
+        }
+
+        &[data-direction="left"] {
+          &[data-current="true"] + article {
+            @apply block;
+          }
+        }
+
+        @screen md {
+          @apply w-1/2 px-5 pb-5 pt-1 mx-2;
+
+          flex: 0 0 32%;
+        }
+
+        .published-when {
+          @apply text-black mb-5;
+        }
       }
 
-      .published-when {
-        @apply text-black mb-5;
+      .post-container-clear {
+        flex: 0 0 100%;
       }
-    }
-
-    .post-container-clear {
-      flex: 0 0 100%;
     }
 
     .post-short-container {
       @apply flex-col ml-2;
+
+      flex: 0 0 100%;
 
       .post-short {
         @apply py-2 px-5 mb-5;

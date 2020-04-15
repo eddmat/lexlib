@@ -34,29 +34,25 @@ const Posts = () => {
     <Query query={POSTS_QUERY}>
       {({ data: { allPosts } }) => (
         <section className="posts-container">
-          {allPosts.map((post: any, index: number) => (
-            <ReactTouchEvents key={post.id} onTap={handleTap} onSwipe={handleSwipe}>
-              <article
-                className="post-card"
-                data-current={index === current}
-                data-direction={swipe}>
-                <div className="published-when">
-                  <When dateTime={post.date} />
-                </div>
-                <h2>{post.title}</h2>
+          <div className="post-card-container">
+            {allPosts.map((post: any, index: number) => (
+              <ReactTouchEvents key={post.id} onTap={handleTap} onSwipe={handleSwipe}>
+                <article
+                  className="post-card"
+                  data-current={index === current}
+                  data-direction={swipe}>
+                  <div className="published-when">
+                    <When dateTime={post.date} />
+                  </div>
+                  <h2>{post.title}</h2>
 
-                <p>{post.excerpt}</p>
-              </article>
-            </ReactTouchEvents>
-          ))}
-          <div className="post-container-clear"></div>
+                  <p>{post.excerpt}</p>
+                </article>
+              </ReactTouchEvents>
+            ))}
+            <div className="post-container-clear"></div>
+          </div>
           <div className="post-short-container">
-            <article className="post-short">
-              <h2>Ejemplo 1</h2>
-              <p>
-                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-              </p>
-            </article>
             <article className="post-short">
               <h2>Ejemplo 1</h2>
               <p>
