@@ -4,6 +4,6 @@ const withFonts = require('next-fonts')
 
 module.exports = withFonts({
   env: {
-    DATOCMS_API_TOKEN: process.env.DATOCMS_API_TOKEN,
+    datocms_api_token: process.env.datocms_api_token,
   },
 })
