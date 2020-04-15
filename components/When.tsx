@@ -16,7 +16,7 @@ const When = ({ dateTime }: DateProp) => {
   }
 
   if (diff.days === 1) {
-    return <span>Hace {diff.days} día</span>
+    return <span>Ayer</span>
   }
 
   return <span>Hace {diff.days} días</span>

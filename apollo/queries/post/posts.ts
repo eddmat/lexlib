@@ -11,5 +11,4 @@ const POSTS_QUERY = gql`
     }
   }
 `
-
 export default POSTS_QUERY

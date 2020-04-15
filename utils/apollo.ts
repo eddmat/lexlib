@@ -6,8 +6,6 @@ import fetch from 'isomorphic-unfetch'
 
 const GRAPHQL_URL = 'https://graphql.datocms.com'
 const API_TOKEN = process.env.datocms_api_token
-console.log('api', API_TOKEN)
-console.log('env', process.env)
 
 const link = createHttpLink({
   fetch,

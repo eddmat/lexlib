@@ -17,7 +17,6 @@ const Posts = () => {
     setSwipe(direction)
 
     if (current < postsCount) {
-      console.log(current, postsCount)
       if (direction === 'left') setCurrent(current + 1)
 
       if (direction === 'right') setCurrent(current - 1)
@@ -25,7 +24,7 @@ const Posts = () => {
   }
 
   useEffect(() => {
-    const articlesElm = document.getElementsByClassName('post')
+    const articlesElm = document.getElementsByClassName('post-card')
     const postsCount = articlesElm.length - 1
 
     setPostsCount(postsCount)
@@ -37,7 +36,10 @@ const Posts = () => {
         <section className="posts-container">
           {allPosts.map((post: any, index: number) => (
             <ReactTouchEvents key={post.id} onTap={handleTap} onSwipe={handleSwipe}>
-              <article className="post" data-current={index === current} data-direction={swipe}>
+              <article
+                className="post-card"
+                data-current={index === current}
+                data-direction={swipe}>
                 <div className="published-when">
                   <When dateTime={post.date} />
                 </div>
@@ -47,6 +49,33 @@ const Posts = () => {
               </article>
             </ReactTouchEvents>
           ))}
+          <div className="post-container-clear"></div>
+          <div className="post-short-container">
+            <article className="post-short">
+              <h2>Ejemplo 1</h2>
+              <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+              </p>
+            </article>
+            <article className="post-short">
+              <h2>Ejemplo 1</h2>
+              <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+              </p>
+            </article>
+            <article className="post-short">
+              <h2>Ejemplo 1</h2>
+              <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+              </p>
+            </article>
+            <article className="post-short">
+              <h2>Ejemplo 1</h2>
+              <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+              </p>
+            </article>
+          </div>
         </section>
       )}
     </Query>
