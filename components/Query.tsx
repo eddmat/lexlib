@@ -4,12 +4,12 @@ import { useQuery } from '@apollo/react-hooks'
 interface Props {
   children: any
   query: any
-  id?: any
+  slug?: any
 }
 
-const Query = ({ children, query, id }: Props) => {
+const Query = ({ children, query, slug }: Props) => {
   const { data, loading, error } = useQuery(query, {
-    variables: { id: id },
+    variables: { slug: slug },
   })
 
   if (loading) return <p>Loading...</p>

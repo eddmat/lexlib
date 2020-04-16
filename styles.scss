@@ -55,15 +55,15 @@ body {
     }
 
     article {
-      @apply shadow-md rounded p-5 pt-1;
+      @apply shadow-md rounded p-5 pt-1 border border-gray-500 cursor-pointer;
 
       background-color: lighten($bg-section, 5%);
       height: fit-content;
 
       @screen md {
-        @apply mt-20 w-1/2 mr-10;
+        @apply mt-20 w-1/2 mr-10 ml-5;
       }
-
+      
       h1 {
         @apply text-5xl mb-10 text-left leading-tight ;
 
@@ -111,10 +111,6 @@ body {
     }
   }
 
-  section {
-    @apply shadow-md;
-  }
-
   .posts-container {
     @apply bg-contain bg-no-repeat;
 
@@ -125,11 +121,11 @@ body {
     @screen md {
       @apply bg-auto;
 
-      background-position: 95% 55%;
+      background-position: 95% 50%;
     }
 
     .post-card-container {
-      @apply flex flex-row overflow-hidden px-2;
+      @apply flex flex-row overflow-hidden px-2 pt-10;
 
       @screen md {
         @apply pt-24;
@@ -148,8 +144,8 @@ body {
       }
 
       .post-card {
-        @apply mb-5 shadow-md;
-        @apply px-10 pb-10 pt-1 text-black rounded;
+        @apply mb-5 shadow-md cursor-pointer;
+        @apply px-10 pb-10 pt-1 text-black rounded border border-gray-500;
 
         background-color: lighten($bg-section, 5%);
         flex: 0 0 100vw;
@@ -190,13 +186,18 @@ body {
       flex: 0 0 100%;
 
       @screen md {
-        @apply mt-20;
+        @apply mt-16;
       }
+
       .post-short {
         @apply py-2 px-5 mb-5;
 
         border-bottom: 1px solid darken($bg-section, 30%);
         background-color: $bg-white;
+
+        @screen md {
+          @apply w-1/2;
+        }
 
         h2 {
           @apply text-xl;
@@ -205,24 +206,65 @@ body {
     }
   }
 
-  .articles-container {
+  .post-container {
+    @apply p-10;
+
+    background-color: $bg-white;
+
+    header {
+      @apply relative mb-5 text-sm font-mono text-gray-600;
+
+      .cc {
+        @apply mr-1 text-base;
+
+        font-family: 'Copyleft', sans;
+      }
+
+      aside {
+        @apply absolute origin-top-left transform rotate-90;
+        @apply text-sm font-mono text-gray-600;
+
+        top: 32px;
+        left: 15px;
+      }
+    }
+
     article {
       @screen md {
         column-count: 2;
         column-gap: 2rem;
       }
 
-      h2 {
-        @apply leading-tight;
+      hgroup {
+        @apply pl-10 mb-16;
+
+        h2 {
+          @apply text-3xl text-left leading-tight mb-2;
+
+          font-family: "Prata", serif;
+
+          @screen md {
+            @apply text-5xl;
+          }
+        }
+
+        h3 {
+          @apply italic text-gray-800 text-xl text-justify;
+
+          hyphens: auto;
+        }
       }
 
       p {
+        @apply text-justify;
+
         hyphens: auto;
+        text-indent: 2rem;
       }
     }
   }
 
   .about-container {
-    @apply bg-gray-900 text-gray-200 px-5;
+    @apply px-5;
   }
 }

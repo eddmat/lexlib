@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
 import POSTS_QUERY from '../apollo/queries/post/posts'
 import Query from '../components/Query'
 import When from '../components/When'
 import ReactTouchEvents from 'react-touch-events'
-
-const handleTap = () => {
-  console.log('tapped')
-}
 
 const Posts = () => {
   const [swipe, setSwipe] = useState('')
@@ -36,42 +33,35 @@ const Posts = () => {
         <section className="posts-container">
           <div className="post-card-container">
             {allPosts.map((post: any, index: number) => (
-              <ReactTouchEvents key={post.id} onTap={handleTap} onSwipe={handleSwipe}>
-                <article
-                  className="post-card"
-                  data-current={index === current}
-                  data-direction={swipe}>
-                  <div className="published-when">
-                    <When dateTime={post.date} />
-                  </div>
-                  <h2>{post.title}</h2>
+              <Link
+                key={post.id}
+                as={`/posts/${post.slug}`}
+                href={{ pathname: '/posts/[slug]', query: { id: post.id } }}>
+                <ReactTouchEvents onSwipe={handleSwipe}>
+                  <article
+                    className="post-card"
+                    data-current={index === current}
+                    data-direction={swipe}>
+                    <div className="published-when">
+                      <When dateTime={post.date} />
+                    </div>
+                    <h2>{post.title}</h2>
 
-                  <p>{post.excerpt}</p>
-                </article>
-              </ReactTouchEvents>
+                    <p>{post.excerpt}</p>
+                  </article>
+                </ReactTouchEvents>
+              </Link>
             ))}
             <div className="post-container-clear"></div>
           </div>
-          <div className="post-short-container">
-            <article className="post-short">
+          {/* <div className="post-short-container">
+              <article className="post-short">
               <h2>Ejemplo 1</h2>
               <p>
-                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
               </p>
-            </article>
-            <article className="post-short">
-              <h2>Ejemplo 1</h2>
-              <p>
-                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-              </p>
-            </article>
-            <article className="post-short">
-              <h2>Ejemplo 1</h2>
-              <p>
-                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-              </p>
-            </article>
-          </div>
+              </article>
+              </div> */}
         </section>
       )}
     </Query>

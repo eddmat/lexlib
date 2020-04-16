@@ -1,7 +1,12 @@
 import { DateTime } from 'luxon'
 
-const Date = (dateTime: string, format: string) => {
-  return DateTime.fromISO(dateTime).setLocale('es').toFormat(format)
+interface Props {
+  dateTime: string
+}
+const Date = ({ dateTime }: Props) => {
+  const date = DateTime.fromISO(dateTime).setLocale('es').toFormat('DDD')
+
+  return <span>{date}</span>
 }
 
 export default Date

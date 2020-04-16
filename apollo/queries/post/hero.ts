@@ -7,6 +7,7 @@ const HERO_QUERY = gql`
       title
       excerpt
       createdAt
+      slug
     }
   }
 `

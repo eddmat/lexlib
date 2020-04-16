@@ -10,7 +10,7 @@ const Article = () => {
               <li>Publicada el</li>
               <li>
                 <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank">
-                  <span className="cc">cb</span> Obra liberada bajo licencia Creative Commons
+                  <span className="cc">c</span> Obra liberada bajo licencia Creative Commons
                   Atribución 4.0 Internacional.
                 </a>
               </li>
