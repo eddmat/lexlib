@@ -7,6 +7,7 @@ import ReactMarkdown from 'react-markdown'
 
 const Post = () => {
   const router = useRouter()
+  console.log(router)
 
   return (
     <Query query={POST_QUERY} slug={router.query.slug}>

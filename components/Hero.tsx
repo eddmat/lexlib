@@ -9,9 +9,7 @@ const Hero = () => (
     {({ data: { allPosts } }) => (
       <div className="main-header">
         <div className="hero-bg"></div>
-        <Link
-          as={`/posts/${allPosts[0].slug}`}
-          href={{ pathname: '/posts/[slug]', query: { id: allPosts[0].id } }}>
+        <Link as={`/posts/${allPosts[0].slug}`} href="/posts/[slug]">
           <article>
             <div className="published-when">
               <When dateTime={allPosts[0].createdAt} />
