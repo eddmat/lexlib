@@ -12,10 +12,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Fauna+One|Headland+One|IM+Fell+Great+Primer+SC|Prata|Vidaloka&display=swap');
 
-@font-face {
-  font-family: "Copyleft";
-  src: url("/fonts/cc-icons.woff") format("woff");
-}
+@import url('/fonts/entypo.css');
 
 $bg-section: #eaeaea;
 $bg-red-600: #e53e3e;
@@ -92,7 +89,7 @@ body {
   }
 
   .navigation {
-    @apply sticky top-0 shadow-lg z-10 h-20 text-xl bg-black p-5;
+    @apply sticky flex flex-row top-0 shadow-lg z-10 h-20 text-xl bg-black p-5;
 
     font-family: 'Fira Code', monospace;
 
@@ -100,18 +97,46 @@ body {
       @apply py-5 px-10;
     }
 
-    .logotype {
-      @apply tracking-tighter border-4 border-white text-white font-black cursor-pointer;
+    .logotype-container {
+      @apply flex-grow;
 
-      span {
-        @apply px-1;
+      .logotype {
+        @apply tracking-tighter border-4 border-white text-white font-black cursor-pointer;
 
-        &:first-child {
-          @apply bg-white text-black;
+        span {
+          @apply px-1;
+
+          &:first-child {
+            @apply bg-white text-black;
+          }
+
+          &:last-child {
+            @apply pr-2;
+          }
         }
+      }
+    }
 
-        &:last-child {
-          @apply pr-2;
+    .social-container {
+      @apply flex-grow;
+
+      ul {
+        @apply flex flex-row-reverse;
+
+        li {
+          @apply px-2 text-white text-lg;
+
+          i {
+            @apply text-xl align-middle;
+          }
+
+          span {
+            @apply hidden;
+
+            @screen md {
+              @apply inline;
+            }
+          }
         }
       }
     }

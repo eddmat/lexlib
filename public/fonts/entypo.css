@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Entypo';
+  src: url('entypo.woff?snj1ka') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'Entypo' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-creative-commons-attribution:before {
+  content: "\e900";
+}
+.icon-creative-commons:before {
+  content: "\e901";
+}
+.icon-chevron-with-circle-down:before {
+  content: "\e902";
+}
+.icon-spotify-with-circle:before {
+  content: "\e903";
+}
+.icon-github:before {
+  content: "\e904";
+}
+.icon-twitter:before {
+  content: "\e905";
+}
