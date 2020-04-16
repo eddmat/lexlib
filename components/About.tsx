@@ -6,7 +6,7 @@ const About = () => (
   <Query query={ABOUT_QUERY}>
     {({ data: { post } }) => (
       <section className="about-container">
-        <h2>Acerca de</h2>
+        <h3>Acerca de</h3>
         {post.content}
       </section>
     )}

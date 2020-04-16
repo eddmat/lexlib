@@ -245,10 +245,8 @@ body {
     header {
       @apply relative mb-5 text-sm font-mono text-gray-600;
 
-      .cc {
-        @apply mr-1 text-base;
-
-        font-family: 'Copyleft', sans;
+      i {
+        @apply mr-1 text-base align-middle;
       }
 
       aside {
@@ -297,7 +295,37 @@ body {
     }
   }
 
-  .about-container {
-    @apply px-5;
+  .footer-container {
+    @apply flex flex-col py-5 text-xs;
+
+    @screen md {
+      @apply flex-row p-10;
+    }
+
+    .footer-item {
+      @apply flex-1 px-5;
+
+      &:nth-child(even) {
+        @apply my-5 py-2 border-t border-b;
+
+        border-color: darken($bg-section, 10%);
+      }
+
+      @screen md {
+        @apply px-10;
+      }
+
+      h3 {
+        @apply font-black mb-2;
+      }
+
+      @screen md {
+        &:nth-child(even) {
+          @apply border-r border-l border-t-0 border-b-0;
+
+          border-color: darken($bg-section, 10%);
+        }
+      }
+    }
   }
 }

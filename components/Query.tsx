@@ -12,7 +12,7 @@ const Query = ({ children, query, slug }: Props) => {
     variables: { slug: slug },
   })
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <p>Cargando...</p>
   if (error) return <p>Error: {JSON.stringify(error)}</p>
   return children({ data })
 }

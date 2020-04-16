@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import { ApolloProvider } from '@apollo/react-hooks'
 import withData from '../utils/apollo'
 import '../styles.scss'
@@ -18,9 +19,13 @@ const App = ({ Component, pageProps, apollo }: Props) => {
         <title>Lexico Libertario</title>
       </Head>
 
-      <Nav />
+      <main className="container">
+        <Nav />
 
-      <Component {...pageProps} />
+        <Component {...pageProps} />
+
+        <Footer />
+      </main>
     </ApolloProvider>
   )
 }
