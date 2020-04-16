@@ -21,7 +21,7 @@ const Post = () => {
                 Internacional.
               </a>
               <aside>
-                Del <Date dateTime={post.createdAt} />
+                Del <Date dateTime={post.date} />
               </aside>
             </header>
 

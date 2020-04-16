@@ -9,7 +9,7 @@ const When = ({ dateTime }: DateProp) => {
   const local = DateTime.local().toFormat('yyyy-MM-dd')
   const today = DateTime.fromISO(local)
   const createdAt = DateTime.fromISO(dateTime)
-  const diff = today.diff(createdAt, 'days').toObject()
+  const diff = today.diff(createdAt, ['weeks', 'days']).toObject()
   const when = Math.trunc(diff.days)
 
   if (when < 1) {

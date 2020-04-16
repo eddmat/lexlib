@@ -6,7 +6,6 @@ const POSTS_QUERY = gql`
       id
       title
       excerpt
-      createdAt
       date
       slug
     }

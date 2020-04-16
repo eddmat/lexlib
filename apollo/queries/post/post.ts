@@ -7,7 +7,7 @@ const POST_QUERY = gql`
       title
       excerpt
       content
-      createdAt
+      date
     }
   }
 `

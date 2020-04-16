@@ -12,7 +12,7 @@ const Hero = () => (
         <Link as={`/posts/${allPosts[0].slug}`} href="/posts/[slug]">
           <article>
             <div className="published-when">
-              <When dateTime={allPosts[0].createdAt} />
+              <When dateTime={allPosts[0].date} />
             </div>
             <h1>
               <span>{allPosts[0].title}</span>
