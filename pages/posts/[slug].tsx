@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import { Helmet } from 'react-helmet'
 import Query from '../../components/Query'
 import Date from '../../components/Date'
 import POST_QUERY from '../../apollo/queries/post/post'
@@ -7,12 +8,12 @@ import ReactMarkdown from 'react-markdown'
 
 const Post = () => {
   const router = useRouter()
-  console.log(router)
 
   return (
     <Query query={POST_QUERY} slug={router.query.slug}>
       {({ data: { post } }) => (
         <section className="post-container">
+          <Helmet title={post.title} />
           <header>
             <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank">
               <i className="icon-creative-commons"></i>

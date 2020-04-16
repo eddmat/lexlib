@@ -311,17 +311,13 @@ body {
         border-color: darken($bg-section, 10%);
       }
 
-      @screen md {
-        @apply px-10;
-      }
-
       h3 {
         @apply font-black mb-2;
       }
 
       @screen md {
         &:nth-child(even) {
-          @apply border-r border-l border-t-0 border-b-0;
+          @apply my-0 border-r border-l border-t-0 border-b-0;
 
           border-color: darken($bg-section, 10%);
         }
