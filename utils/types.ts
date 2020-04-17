@@ -4,6 +4,7 @@ export type PostData = {
   excerpt: string
   date: string
   slug: string
+  content?: string
 }
 
 export type PostsData = {
@@ -16,18 +17,6 @@ export type AboutData = {
   data: {
     post: {
       id: number
-      content: string
-    }
-  }
-}
-
-export type SinglePostData = {
-  data: {
-    post: {
-      id: number
-      title: string
-      excerpt: string
-      date: string
       content: string
     }
   }

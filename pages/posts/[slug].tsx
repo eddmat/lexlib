@@ -5,21 +5,22 @@ import Query from '../../components/Query'
 import Date from '../../components/Date'
 import POST_QUERY from '../../apollo/queries/post/post'
 import ReactMarkdown from 'react-markdown'
-import { SinglePostData } from '../../utils/types'
+import { PostData } from '../../utils/types'
 
 const Post = () => {
   const router = useRouter()
 
   return (
     <Query query={POST_QUERY} slug={router.query.slug}>
-      {({ data: { post } }: SinglePostData) => (
+      {({ data: { post } }: PostData) => (
         <section className="post-container">
           <Helmet
             title={post.title}
             meta={[
               { name: 'description', content: post.excerpt },
-              { name: 'og:title', content: post.title },
-              { name: 'og:description', content: post.excerpt },
+              { property: 'og:title', content: post.title },
+              { property: 'og:description', content: post.excerpt },
+              { property: 'og:url', content: `https://lexlib.now.sh/${post.slug}` },
             ]}
           />
           <header>

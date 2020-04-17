@@ -8,6 +8,7 @@ const POST_QUERY = gql`
       excerpt
       content
       date
+      slug
     }
   }
 `
