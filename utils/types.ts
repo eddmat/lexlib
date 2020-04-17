@@ -3,13 +3,19 @@ export type PostData = {
   title: string
   excerpt: string
   date: string
-  slug: string
+  slug?: string
   content?: string
 }
 
 export type PostsData = {
   data: {
     allPosts: PostData[]
+  }
+}
+
+export type SinglePostData = {
+  data: {
+    post: PostData
   }
 }
 
@@ -22,8 +28,8 @@ export type AboutData = {
   }
 }
 
-export type SinglePostData = {
-  data: {
-    post: PostData
-  }
+export type ApolloData = {
+  Component: any
+  pageProps: any
+  apollo: any
 }
