@@ -21,3 +21,9 @@ export type AboutData = {
     }
   }
 }
+
+export type SinglePostData = {
+  data: {
+    post: PostData
+  }
+}
