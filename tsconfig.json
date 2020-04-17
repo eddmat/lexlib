@@ -3,7 +3,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "jsx": "preserve",
-    "strict": false,
+    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,

@@ -5,13 +5,14 @@ import Query from '../../components/Query'
 import Date from '../../components/Date'
 import POST_QUERY from '../../apollo/queries/post/post'
 import ReactMarkdown from 'react-markdown'
+import { SinglePostData } from '../../utils/types'
 
 const Post = () => {
   const router = useRouter()
 
   return (
     <Query query={POST_QUERY} slug={router.query.slug}>
-      {({ data: { post } }) => (
+      {({ data: { post } }: SinglePostData) => (
         <section className="post-container">
           <Helmet title={post.title} />
           <header>

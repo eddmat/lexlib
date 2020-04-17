@@ -4,6 +4,7 @@ import POSTS_QUERY from '../apollo/queries/post/posts'
 import Query from '../components/Query'
 import When from '../components/When'
 import ReactTouchEvents from 'react-touch-events'
+import { PostsData } from '../utils/types'
 
 const Posts = () => {
   const [swipe, setSwipe] = useState('')
@@ -29,7 +30,7 @@ const Posts = () => {
 
   return (
     <Query query={POSTS_QUERY}>
-      {({ data: { allPosts } }) => (
+      {({ data: { allPosts } }: PostsData) => (
         <section className="posts-container">
           <div className="post-card-container">
             {allPosts.map((post: any, index: number) => (

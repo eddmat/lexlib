@@ -3,10 +3,11 @@ import Link from 'next/link'
 import HERO_QUERY from '../apollo/queries/post/hero'
 import Query from '../components/Query'
 import When from '../components/When'
+import { PostsData } from '../utils/types'
 
 const Hero = () => (
   <Query query={HERO_QUERY}>
-    {({ data: { allPosts } }) => (
+    {({ data: { allPosts } }: PostsData) => (
       <div className="main-header">
         <div className="hero-bg"></div>
         <Link as={`/posts/${allPosts[0].slug}`} href="/posts/[slug]">

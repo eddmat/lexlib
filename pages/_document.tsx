@@ -1,22 +1,16 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { Helmet } from 'react-helmet'
 
-class MyDocument extends Document {
-  static async getInitialProps(...args) {
-    const documentProps = await super.getInitialProps(...args)
+export default class extends Document {
+  static async getInitialProps(ctx: any) {
+    const documentProps = await super.getInitialProps(ctx)
     return { ...documentProps, helmet: Helmet.renderStatic() }
-  }
-
-  get helmetHeadComponents() {
-    return Object.keys(this.props.helmet)
-      .filter(el => el !== 'htmlAttributes' && el !== 'bodyAttributes')
-      .map(el => this.props.helmet[el].toComponent())
   }
 
   render() {
     return (
       <Html lang="es">
-        <Head>{this.helmetHeadComponents}</Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
@@ -25,5 +19,3 @@ class MyDocument extends Document {
     )
   }
 }
-
-export default MyDocument
