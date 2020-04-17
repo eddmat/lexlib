@@ -14,7 +14,14 @@ const Post = () => {
     <Query query={POST_QUERY} slug={router.query.slug}>
       {({ data: { post } }: SinglePostData) => (
         <section className="post-container">
-          <Helmet title={post.title} />
+          <Helmet
+            title={post.title}
+            meta={[
+              { name: 'description', content: post.excerpt },
+              { name: 'og:title', content: post.title },
+              { name: 'og:description', content: post.excerpt },
+            ]}
+          />
           <header>
             <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank">
               <i className="icon-creative-commons"></i>
