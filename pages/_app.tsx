@@ -8,14 +8,14 @@ import { DefaultSeo } from 'next-seo'
 import '../styles.scss'
 
 const App = ({ Component, pageProps, apollo }: ApolloData) => {
-  const [host, setHost] = useState('')
+  const [origin, setOrigin] = useState('')
 
-  useEffect(() => setHost(window.location.host))
+  useEffect(() => setOrigin(window.location.origin))
+
   return (
     <ApolloProvider client={apollo}>
       <main className="container">
         <DefaultSeo
-          title="Léxico Libertario"
           titleTemplate="%s | Léxico Libertario"
           description="Ensayos libertarios y registros generacionales"
           openGraph={{
@@ -23,7 +23,7 @@ const App = ({ Component, pageProps, apollo }: ApolloData) => {
             locale: 'es_UY',
             images: [
               {
-                url: `${host}/og-image.jpeg`,
+                url: `${origin}/og-image.jpeg`,
               },
             ],
           }}
