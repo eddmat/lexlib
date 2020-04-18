@@ -16,6 +16,7 @@ const App = ({ Component, pageProps, apollo }: ApolloData) => {
     <ApolloProvider client={apollo}>
       <main className="container">
         <DefaultSeo
+          title="Léxico Libertario"
           titleTemplate="%s | Léxico Libertario"
           description="Ensayos libertarios y registros generacionales"
           openGraph={{
