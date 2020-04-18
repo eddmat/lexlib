@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import HERO_QUERY from '../apollo/queries/post/hero'
+import HERO_QUERY from '../queries/hero'
 import Query from '../components/Query'
 import When from '../components/When'
 import { PostsData } from '../utils/types'

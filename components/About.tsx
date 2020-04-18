@@ -1,5 +1,5 @@
 import React from 'react'
-import ABOUT_QUERY from '../apollo/queries/post/about'
+import ABOUT_QUERY from '../queries/about'
 import Query from '../components/Query'
 import { AboutData } from '../utils/types'
 

@@ -33,3 +33,20 @@ export type ApolloData = {
   pageProps: any
   apollo: any
 }
+
+export type SiteData = {
+  data: {
+    _site: {
+      globalSeo: {
+        siteName: string
+        fallbackSeo: {
+          description: string
+          image: {
+            url: string
+          }
+          twitterAccount: string
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Router from 'next/router'
-import POSTS_QUERY from '../apollo/queries/post/posts'
+import POSTS_QUERY from '../queries/posts'
 import Query from '../components/Query'
 import When from '../components/When'
 import ReactTouchEvents from 'react-touch-events'

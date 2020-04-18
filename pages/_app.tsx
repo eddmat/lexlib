@@ -1,38 +1,40 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { ApolloProvider } from '@apollo/react-hooks'
 import withData from '../utils/apollo'
-import { ApolloData } from '../utils/types'
+import { ApolloData, SiteData } from '../utils/types'
+import Query from '../components/Query'
+import SITE_QUERY from '../queries/site'
 import { DefaultSeo } from 'next-seo'
 import '../styles.scss'
 
 const App = ({ Component, pageProps, apollo }: ApolloData) => {
-  const [origin, setOrigin] = useState('')
-
-  useEffect(() => setOrigin(window.location.origin))
-
   return (
     <ApolloProvider client={apollo}>
       <main className="container">
-        <DefaultSeo
-          title="Léxico Libertario"
-          titleTemplate="%s | Léxico Libertario"
-          description="Ensayos libertarios y registros generacionales"
-          openGraph={{
-            type: 'website',
-            locale: 'es_UY',
-            images: [
-              {
-                url: `${origin}/og-image.jpeg`,
-              },
-            ],
-          }}
-          twitter={{
-            handle: '@upthecomputers',
-            cardType: 'summary',
-          }}
-        />
+        <Query query={SITE_QUERY}>
+          {({ data: { _site } }: SiteData) => (
+            <DefaultSeo
+              title={_site.globalSeo.siteName}
+              titleTemplate={`%s | ${_site.globalSeo.siteName}`}
+              description={_site.globalSeo.fallbackSeo.description}
+              openGraph={{
+                type: 'website',
+                locale: 'es_UY',
+                images: [
+                  {
+                    url: _site.globalSeo.fallbackSeo.image.url,
+                  },
+                ],
+              }}
+              twitter={{
+                handle: _site.globalSeo.fallbackSeo.twitterAccount,
+                cardType: 'summary',
+              }}
+            />
+          )}
+        </Query>
         <Nav />
 
         <Component {...pageProps} />
