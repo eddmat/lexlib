@@ -12,10 +12,14 @@ const Footer = () => (
 
       <ul>
         <li>
-          <i className="icon-twitter"></i> Twitter
+          <a href="https://twitter.com/upthecomputers" title="Perfil en Twitter" target="_blank">
+            <i className="icon-twitter"></i> Twitter
+          </a>
         </li>
         <li>
-          <i className="icon-github"></i> Github
+          <a href="https://github.com/eddmat/lexlib" title="Repositorio en Github" target="_blank">
+            <i className="icon-github"></i> Github
+          </a>
         </li>
       </ul>
     </div>

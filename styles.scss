@@ -44,10 +44,10 @@ body {
       @apply h-screen w-screen bg-cover bg-no-repeat -mt-16;
 
       background-image: url("/bolten-hero.svg");
-      background-position: -90px, 0;
+      background-position: -165px, 0;
 
       @screen md {
-        @apply h-screen w-1/2 bg-left mt-0;
+        @apply h-screen flex-1 bg-right mt-0;
       }
     }
 
@@ -58,7 +58,7 @@ body {
       height: fit-content;
 
       @screen md {
-        @apply mt-20 w-1/2 mr-10 ml-5;
+        @apply mt-20 flex-1 mr-10 ml-5;
       }
 
       h1 {
