@@ -32,6 +32,15 @@ const Posts = () => {
     <Query query={POSTS_QUERY}>
       {({ data: { allPosts } }: PostsData) => (
         <section className="posts-container">
+          <div className="post-slides-counter">
+            <ul>
+              {allPosts.map((post: any, index: number) => (
+                <li key={`${post.id}_${index}`}>
+                  <input type="radio" checked={index === current} />
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="post-card-container">
             {allPosts.map((post: any, index: number) => (
               <ReactTouchEvents key={post.id} onSwipe={handleSwipe}>

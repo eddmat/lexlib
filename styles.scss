@@ -155,8 +155,20 @@ body {
       background-position: 95% 50%;
     }
 
+    .post-slides-counter {
+      @apply flex justify-center pt-10 pb-2;
+
+      @screen md {
+        @apply hidden;
+      }
+
+      ul {
+        @apply flex flex-row;
+      }
+    }
+
     .post-card-container {
-      @apply flex flex-row overflow-hidden px-2 pt-10;
+      @apply flex flex-row overflow-hidden px-2;
 
       @screen md {
         @apply pt-24;
