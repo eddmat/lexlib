@@ -32,6 +32,12 @@ const App = ({ Component, pageProps, apollo }: ApolloData) => {
                 handle: _site.globalSeo.fallbackSeo.twitterAccount,
                 cardType: 'summary',
               }}
+              additionalMetaTags={[
+                {
+                  name: 'theme-color',
+                  content: '#000000',
+                },
+              ]}
             />
           )}
         </Query>
