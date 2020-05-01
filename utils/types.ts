@@ -50,3 +50,7 @@ export type SiteData = {
     }
   }
 }
+
+export type DateData = {
+  dateTime: string
+}

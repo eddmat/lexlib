@@ -283,13 +283,15 @@ body {
 
         h3 {
           @apply italic text-gray-800 text-xl text-justify;
+
+          hyphens: auto;
         }
       }
 
       p {
         @apply text-justify;
 
-        hyphens: manual;
+        hyphens: auto;
         text-indent: 2rem;
       }
     }
@@ -313,6 +315,10 @@ body {
 
       h3 {
         @apply font-black mb-2;
+      }
+
+      p {
+        @apply mb-2;
       }
 
       @screen md {

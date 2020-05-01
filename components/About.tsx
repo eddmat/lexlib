@@ -1,6 +1,7 @@
 import React from 'react'
 import ABOUT_QUERY from '../queries/about'
 import Query from '../components/Query'
+import ReactMarkdown from 'react-markdown'
 import { AboutData } from '../utils/types'
 
 const About = () => (
@@ -8,7 +9,7 @@ const About = () => (
     {({ data: { post } }: AboutData) => (
       <section className="about-container">
         <h3>Acerca de</h3>
-        {post.content}
+        <ReactMarkdown source={post.content} />
       </section>
     )}
   </Query>
